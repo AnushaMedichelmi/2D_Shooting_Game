@@ -8,10 +8,12 @@ public class BulletMovement : MonoBehaviour
     public float bulletSpeed;
     public int score;
 
+   // public AudioSource bulletSound;
+   // public AudioClip audioClip;
+
     // Start is called before the first frame update
     //void Start()
     //{
-
     //}
 
     // Update is called once per frame

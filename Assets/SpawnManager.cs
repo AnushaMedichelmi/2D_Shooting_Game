@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;
     public Vector3 offset;
     public float time;
-    public AudioSource bulletSound;
-    public AudioClip audioClip;
+    //public AudioSource bulletSound;
+    //public AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +25,8 @@ public class SpawnManager : MonoBehaviour
 
             Instantiate(bulletPrefab, transform.position + offset, Quaternion.identity);
           
-           bulletSound.clip = audioClip;
-            bulletSound.Play();
+          /* bulletSound.clip = audioClip;
+            bulletSound.Play();*/
         }
         time = time + Time.deltaTime;
         if (time >= 3.0f)
