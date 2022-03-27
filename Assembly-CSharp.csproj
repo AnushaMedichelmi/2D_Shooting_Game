@@ -53,9 +53,10 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerMovement.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
+    <Compile Include="Assets\PlayerMovement.cs" />
     <Compile Include="Assets\BulletMovement.cs" />
+    <Compile Include="Assets\Scenes\UIScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Galaxia Sprite Pack #1\README.txt" />

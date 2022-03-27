@@ -2,32 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class BulletMovement : MonoBehaviour
 {
     public float bulletSpeed;
-    public int score;
-
-   // public AudioSource bulletSound;
-   // public AudioClip audioClip;
+    SpawnManager spawnManager;
 
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //}
+    private void Start()
+    {
+        spawnManager = GameObject.Find("Player").GetComponent<SpawnManager>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(0, bulletSpeed, 0);
+        if (transform.position.y > 12.5f) //Pushing a bullet into bulletStack,when it is out of screen.
+            spawnManager.BackToPool(gameObject);
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Destroy(collision.gameObject);
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.name == "Enemy(Clone)")
         {
             Destroy(collision.gameObject);
+            spawnManager.BackToPool(gameObject);
             GameObject.Find("Player").SendMessage("Score");
+            //SendMessage("Score");
         }
     }
+
+
+
 }
